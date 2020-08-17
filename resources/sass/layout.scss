@@ -1,0 +1,46 @@
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+    color:orange;
+}
+header {
+    width: 100%;
+    height: 100px;
+    background-color: orange;
+    color: white;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    margin-left: 100px;
+}
+
+.header-left i {
+    font-size: 70px;
+}
+
+.header-logo {
+}    
+
+.header-right {
+    margin-right: 100px;
+}
+
+button {
+    background-color: white;
+    color: #664200;
+    border-color: white;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.login-btn {
+    margin-right: 30px;
+}
