@@ -20,15 +20,15 @@ header {
 }
 
 .header-left {
-  margin-left: 100px;
+  margin-left: 40px;
 }
 
 .header-left i {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 .header-right {
-  margin-right: 100px;
+  margin-right: 40px;
 }
 
 button {
@@ -43,3 +43,10 @@ button {
   margin-right: 30px;
 }
 
+.container {
+  margin: 30px;
+}
+
+ul {
+  list-style: none;
+} 
