@@ -10,12 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('top');
+ Route::get('/', function () {
+     return view('top');
+ });
 
-});
 Route::group(['prefix' => 'mypage'], function() {
-    Route::get('profile/edit','Controllers\ProfileController@edit')->middleware('auth');
+    Route::get('myprofile', 'Mypage\ProfileController@myprofile')->middleware('auth');
 });
 
 Auth::routes();
