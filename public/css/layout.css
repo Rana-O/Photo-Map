@@ -2,13 +2,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
-  color: orange;
+  color: black;
 }
 
 header {
   width: 100%;
   height: 100px;
-  background-color: orange;
+  background-color: #ffb833;
   color: white;
 }
 
@@ -36,7 +36,7 @@ button {
   color: #664200;
   border-color: white;
   padding: 15px;
-  border-radius: 3px;
+  border-radius: 0.50rem;
 }
 
 .login-btn {
@@ -49,4 +49,67 @@ button {
 
 ul {
   list-style: none;
-} 
+  width: 500px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #ffb833;
+  border-color: #ffb833;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #ffb833;
+  border-color: #ffb833;
+  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: #fff;
+  background-color: #ffb833;
+  border-color: #ffb833;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #ffb833;
+  border-color: #ffb833;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+}
+
+.edit-btn {
+  margin-left: 30px;
+}
+
+.user-image {
+  height: 100px;
+  width: 100px;
+}
+
+li {
+  border-bottom: 2px solid #ffb833;
+  margin: 15px 0 ;
+}
+
+.logout-btn {
+  margin-right: 15px;
+}
+
+.user_image {
+  margin: 5px;
+}

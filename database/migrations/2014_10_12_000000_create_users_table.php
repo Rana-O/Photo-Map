@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('user_image')->nullable();
         });
     }
 
@@ -31,6 +32,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users', function (Blueprint $table ) {
+            $table->dropColumn('user_image');
+        });
     }
 }

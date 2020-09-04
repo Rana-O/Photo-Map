@@ -11,14 +11,23 @@
 |
 */
  Route::get('/', function () {
+     // logger()->info('something happends');
      return view('top');
  });
 
 Route::group(['prefix' => 'mypage'], function() {
     Route::get('myprofile', 'Mypage\ProfileController@myprofile')->middleware('auth');
+    Route::post('myprofile', 'Mypage\ProfileController@myprofile')->middleware('auth');
+    Route::post('myprofile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
+    Route::get('myprofile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
+    Route::post('myprofile/update', 'Mypage\ProfileController@update')->middleware('auth');
+    
 });
 
 Auth::routes();
 
 Route::get('/mypage', 'HomeController@index')->name('mypage');
+
+//Route::get('/register', 'RegisterController@register')->name('register.register');
+//Route::post('/register', 'RegisterController@register');
 
