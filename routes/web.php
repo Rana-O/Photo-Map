@@ -26,6 +26,9 @@ Route::group(['prefix' => 'mypage'], function() {
 
 Auth::routes();
 
+Route::post('/api/photo', 'Mypage\editController@store');
+// Route::get('/api/photo', 'Mypage\editController@store');
+
 Route::get('/mypage', 'HomeController@index')->name('mypage');
 
 //Route::get('/register', 'RegisterController@register')->name('register.register');

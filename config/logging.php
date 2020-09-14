@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'singe')>error('Something happends'),
+    'default' => env('LOG_CHANNEL', 'singe'),
 
     /*
     |--------------------------------------------------------------------------

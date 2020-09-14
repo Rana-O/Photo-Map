@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $profile->fill($form);
-        // Log::debug('$profile');
+         Log::debug('$profile');
         // Log::debug($request->id);
 
         if (isset($request['user_image'])) {
