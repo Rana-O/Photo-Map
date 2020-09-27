@@ -2,7 +2,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
-  color: orange;
+  /* color: orange; */
 }
 
 header {
@@ -43,3 +43,6 @@ button {
   margin-right: 30px;
 }
 
+body {
+  margin: 30 50;
+}

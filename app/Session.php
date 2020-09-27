@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Session extends Model
 {
-    protected $fillable = [
-        'lat', 'lng', 'caption', 'photo'
-    ];
+    public static $rules = array(
+        'access_token' => 'required',
+    );
 
     public function user() {
         return $this->belongsTo('App\User');
