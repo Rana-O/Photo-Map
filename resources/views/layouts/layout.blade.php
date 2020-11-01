@@ -17,7 +17,7 @@
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-        <!-- <link href="https://fonts.googleapis.com/css? family=Raleway:300,400,600" rel="stylesheet" type="text/css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
         <!-- Styles -->
@@ -32,29 +32,31 @@
             <div class="header-container">
                 <div class="header-left">
                     <div class="make-a-pin">
-                        <a>
-                        <i class="fas fa-map-pin"></i>
+                        <a href="{{ url('mypage/edit') }}">
+                            <button class="no-frame-btn">
+                                <i class="fas fa-map-pin no-bg"></i>
+                            </button>  
                         </a>
                     </div>
                 </div>
                 <div class="header-logo">
-                    <h1>Photo Map</h1>
+                    <font size="7">Photo Map</font>
                 </div>
 
                 @if (Route::has('login'))
                 <div class="header-right">
                     @auth
                         <a href="{{ url('/mypage') }}">
-                            <button type="button" class="mypage-btn">My Page</button>
+                            <button type="button" class="mypage-btn frame-btn">マイページ</button>
                         </a>
                     @else
                         <a href="{{ route('login') }}">
-                            <button type="button" class="login-btn">Login</button>
+                            <button type="button" class="login-btn frame-btn">ログイン</button>
                         </a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">
-                                <button type="button" class="register-btn">Register</button>
+                                <button type="button" class="register-btn frame-btn">新規登録</button>
                             </a>
                         @endif
                     @endauth

@@ -31,8 +31,10 @@
             <div class="header-container">
                 <div class="header-left">
                     <div class="make-a-pin">
-                        <a>
-                        <i class="fas fa-map-pin"></i>
+                        <a href="{{ url('mypage/edit') }}">
+                            <button class="no-frame-btn">
+                                <i class="fas fa-map-pin"></i>
+                            </button>  
                         </a>
                     </div>
                 </div>
@@ -44,16 +46,16 @@
                 <div class="header-right">
                     @auth
                         <a href="{{ url('mypage/myprofile') }}">
-                            <button type="button" class="myprofile-btn">My Profile</button>
+                            <button type="button" class="myprofile-btn frame-btn">My Profile</button>
                         </a>
                     @else
                         <a href="{{ route('login') }}">
-                            <button type="button" class="login-btn">Login</button>
+                            <button type="button" class="login-btn frame-btn">Login</button>
                         </a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">
-                                <button type="button" class="register-btn">Register</button>
+                                <button type="button" class="register-btn frame-btn">Register</button>
                             </a>
                         @endif
                     @endauth

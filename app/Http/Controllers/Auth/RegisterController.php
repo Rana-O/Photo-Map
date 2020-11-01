@@ -87,5 +87,21 @@ class RegisterController extends Controller
         
     }
 
+    protected function authenticated(Request $request, $user) {
+        //api_tokenにランダムなストリングを入れる
+        $user->update(['api_token' => str_random(60)]);
+    }
+
+    public function logout(Request $request) {
+        //ログアウト時にapi_tokenをnullにする
+        $user = $request->user();
+        $user = update(['api_token' =>null]);
+        $this->guard()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/');
+    }
+
+
     
 }

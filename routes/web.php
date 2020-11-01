@@ -21,7 +21,7 @@ Route::group(['prefix' => 'mypage'], function() {
     Route::post('myprofile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
     Route::get('myprofile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
     Route::post('myprofile/update', 'Mypage\ProfileController@update')->middleware('auth');
-    
+    Route::get('edit/', 'Mypage\editController@jump')->middleware('auth');
 });
 
 Auth::routes();

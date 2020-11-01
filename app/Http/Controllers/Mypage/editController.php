@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mypage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class editController extends Controller
 {
@@ -17,9 +18,9 @@ class editController extends Controller
         Log::debug('---$splited---');
         Log::debug($splited);
 
-        $access_token = $splited[1];
-        Log::debug('---$access_token---');
-        Log::debug("'$access_token'");
+        $api_token = $splited[1];
+        Log::debug('---$api_token---');
+        Log::debug("'$api_token'");
         
         if ($splited[0] != "Bearer") {
             // 処理続行できない条件を満たしているので400にして終了。
@@ -28,10 +29,9 @@ class editController extends Controller
         }
         // Bearerでアクセスとーくんが送られてきている。
         // sessionのアクセストークンが同じものを探し出す
-        $session = \App\Session::where('access_token', $access_token)->first();
-        Log::debug('$session');
-        Log::debug($session);
-        $user = $session->user()->first();
+        $user = \App\User::where('api_token', $api_token)->first();
+        Log::debug('$user');
+        Log::debug($user);
 
 
         Log::debug("--request--");
@@ -64,5 +64,12 @@ class editController extends Controller
         $user->posts()->save($post);
         Log::debug($post);
         return view('mypage');
+    }
+
+    public function jump() {
+        // http://localhost:8080?apiKey=xxxxxx
+        Log::debug('---LOG---');
+        // dd(Auth::user());
+        return redirect()->away('http://localhost:8080/edit?apiKey='.Auth::user()->api_token);
     }
 }
